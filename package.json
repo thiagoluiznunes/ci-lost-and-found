@@ -5,7 +5,7 @@
   "main": "loader.js",
   "scripts": {
     "start": "nodemon loader.js",
-    "lint": "./node_modules/.bin/eslint  api/**/*.js config/**/*.js public "
+    "lint": "./node_modules/.bin/eslint  api/**/*.js config/**/*.js"
   },
   "repository": {
     "type": "git",
