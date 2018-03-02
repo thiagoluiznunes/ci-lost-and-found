@@ -6,4 +6,4 @@ before_script:
   - npm install
 branch:
   only:
-- master
+    - master
