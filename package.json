@@ -4,7 +4,8 @@
   "description": "",
   "main": "loader.js",
   "scripts": {
-    "start": "nodemon loader.js",
+    "start": "node loader.js",
+    "dev": "nodemon loader.js",
     "lint": "./node_modules/.bin/eslint  api/**/*.js config/**/*.js"
   },
   "repository": {
@@ -18,10 +19,10 @@
   },
   "homepage": "https://github.com/ThiagoLuizNunes/ci-lost-and-found#readme",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "mongoose": "^4.11.5",
-    "node-restful": "^0.2.6"
+    "body-parser": "1.17.2",
+    "express": "4.15.3",
+    "mongoose": "4.11.5",
+    "node-restful": "0.2.6"
   },
   "devDependencies": {
     "body-parser": "^1.18.2",
