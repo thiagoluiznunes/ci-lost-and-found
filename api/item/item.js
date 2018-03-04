@@ -4,6 +4,7 @@ const mongoose = restful.mongoose;
 const itemSchema = new mongoose.Schema({
   type: {type: String, required: true},
   description: {type: String, required: true},
+  name: {type: String, required: true},
   contact: {type: String, required: true},
   data: {type: String, required: true}});
 
