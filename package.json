@@ -26,7 +26,7 @@
     "node-restful": "0.2.6"
   },
   "devDependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "1.18.2",
     "eslint": "^4.18.1",
     "eslint-config-google": "^0.9.1",
     "nodemon": "^1.14.11"
