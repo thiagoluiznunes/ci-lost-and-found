@@ -6,6 +6,6 @@ const itemSchema = new mongoose.Schema({
   description: {type: String, required: true},
   name: {type: String, required: true},
   contact: {type: String, required: true},
-  data: {type: String, required: true}});
+  date: {type: String, required: true}});
 
 module.exports = restful.model('Item', itemSchema);
