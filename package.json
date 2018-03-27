@@ -4,7 +4,7 @@
   "description": "",
   "main": "loader.js",
   "scripts": {
-    "dev": "node loader.js",
+    "start": "node loader.js",
     "dev": "nodemon loader.js",
     "lint": "./node_modules/.bin/eslint  api/**/*.js config/**/*.js",
     "prepush": "npm run lint"
