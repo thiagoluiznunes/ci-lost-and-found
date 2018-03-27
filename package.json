@@ -4,9 +4,10 @@
   "description": "",
   "main": "loader.js",
   "scripts": {
-    "start": "node loader.js",
+    "dev": "node loader.js",
     "dev": "nodemon loader.js",
-    "lint": "./node_modules/.bin/eslint  api/**/*.js config/**/*.js"
+    "lint": "./node_modules/.bin/eslint  api/**/*.js config/**/*.js",
+    "prepush": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "body-parser": "1.18.2",
     "eslint": "^4.18.1",
     "eslint-config-google": "^0.9.1",
+    "husky": "^0.14.3",
     "nodemon": "^1.14.11"
   }
 }
