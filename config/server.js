@@ -1,3 +1,5 @@
+'use strict';
+
 const port = 4000;
 // BODY parse of requistion
 const bodyParser = require('body-parser');
