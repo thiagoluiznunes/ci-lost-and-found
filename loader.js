@@ -1,5 +1,5 @@
 // const server = require('./config/server');
-const ServerClass = require('./config-soap/server');
+const ServerClass = require('./config-oo/server');
 
 let server = new ServerClass(4000);
 
