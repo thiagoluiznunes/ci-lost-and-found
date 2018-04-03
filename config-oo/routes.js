@@ -1,17 +1,53 @@
-const express = require('express');
-const itemQuerys = require('../api/item/itemQuerys');
+'use strict';
 
-module.exports = function(server) {
-  // API Routes
-  const router = new express.Router();
-  server.use('/api', router);
+class RoutesClass {
+  constructor(server) {
+    const express = require('express');
+    const router = new express.Router();
+    let apiRoutes = [];
+    let searchRoutes = [];
 
-  // Registering API methods in router
-  const itemService = require('../api/item/itemService');
-  itemService.register(router, '/item');
+    server.use('/api', router);
 
-  // Search's routes
-  router.get('/search-name/:name', itemQuerys.searchByName);
-};
+    this.startAPIRoutes = () => {
+      if (apiRoutes.length == 0) {
+        return console.log('None route was found!');
+      } else {
+        for (let x = 0; x < apiRoutes.length; x++) {
+          let {path, url} = apiRoutes[x];
 
-  // require('../api/item/itemRoutes')(router, itemQuerys);
+          let service = require(`${path}`);
+          service.register(router, `${url}`);
+        }
+      }
+    };
+    this.startAPISearch = () => {
+      if (searchRoutes == 0) {
+        return console.log('None search route was found!');
+      } else {
+        for (let x = 0; x < searchRoutes.lenght; x++) {
+          let {query, path, url} = searchRoutes[x];
+          let service = require(`${path}`);
+          let method = service.find(query);
+
+          router.get(`${url}`, method);
+        }
+      }
+    };
+    this.addAPIMethod = (path, url) => {
+      apiRoutes.push({
+        'path': `../${path}`,
+        'url': url});
+    };
+    this.addAPISearchMethod = (query, path, url) => {
+      searchRoutes.push({
+        'query': query,
+        'path': `../${path}`,
+        'url': url});
+    };
+    this.getRoutes = () => apiRoutes;
+    this.getRoutes = () => searchRoutes;
+  }
+}
+
+module.exports = RoutesClass;
