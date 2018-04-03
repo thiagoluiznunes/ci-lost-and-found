@@ -1,3 +1,5 @@
+'use strict';
+
 // const server = require('./config/server');
 const ServerClass = require('./config-oo/server');
 const RoutesClass = require('./config-oo/routes');
