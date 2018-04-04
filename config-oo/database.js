@@ -5,7 +5,7 @@ class DataBase {
     const mongoose = require('mongoose');
 
     this.dbConnection = () => {
-      return mongoose.connect('mongodb://thiagoluiznunes:thiagoluizti1606@ds153198.mlab.com:53198/db_ci-lost-and-found',
+      return mongoose.connect('mongodb://thiagoluiznunes:thiagoluizti1606@ds233739.mlab.com:33739/ci-database',
         {useMongoClient: true}
       );
     };
