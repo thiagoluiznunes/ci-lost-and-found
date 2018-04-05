@@ -1,8 +1,8 @@
-const express = require('express');
-const itemQuerys = require('../api/item/itemQuerys');
-const itemService = require('../api/item/itemService');
+import express from 'express';
+import itemQuerys from '../api/item/itemQuerys';
+import itemService from '../api/item/itemService';
 
-module.exports = (server) => {
+export default (server) => {
   // API Routes
   const router = new express.Router();
   server.use('/api', router);

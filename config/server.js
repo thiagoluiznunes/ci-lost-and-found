@@ -1,14 +1,13 @@
-'use strict';
-
-const port = 4000;
 // BODY parse of requistion
-const bodyParser = require('body-parser');
-const express = require('express');
-const allowCors = require('./cors');
-const queryParser = require('express-query-int');
-const server = express();
+import bodyParser from 'body-parser';
+import express from 'express';
+import queryParser from 'express-query-int';
+import allowCors from './cors';
 
-server.use(bodyParser.urlencoded({extended: true}));
+const server = express();
+const port = 4000;
+
+server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 server.use(allowCors);
 server.use(queryParser());
@@ -17,4 +16,4 @@ server.listen(process.env.PORT || port, () => {
   console.log('Listening on');
 });
 
-module.exports = server;
+export default server;
