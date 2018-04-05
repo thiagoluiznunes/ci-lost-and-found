@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ThiagoLuizNunes/ci-lost-and-found#readme",
   "dependencies": {
+    "bluebird": "3.5.1",
     "body-parser": "1.17.2",
     "express": "4.15.3",
     "express-query-int": "1.0.1",
