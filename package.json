@@ -4,8 +4,10 @@
   "description": "",
   "main": "loader.js",
   "scripts": {
+    "babel": "nodemon --exec babel-node loader.js",
     "start": "node loader.js",
     "dev": "nodemon loader.js",
+    "init-lint": "./node_modules/.bin/eslint --init",
     "lint": "./node_modules/.bin/eslint  api/**/*.js config/**/*.js",
     "prepush": "npm run lint"
   },
@@ -27,9 +29,15 @@
     "node-restful": "0.2.6"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "body-parser": "1.18.2",
     "eslint": "^4.18.1",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-config-google": "^0.9.1",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
     "nodemon": "^1.14.11"
   }

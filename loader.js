@@ -1,16 +1,9 @@
-'use strict';
+import ServerClass from './config-oo/server';
+import ItemRoutes from './config-oo/routes/item-routes';
+import DataBase from './config-oo/database';
 
-// const server = require('./config/server');
-const ServerClass = require('./config-oo/server');
-const RoutesClass = require('./config-oo/routes');
-const DataBase = require('./config-oo/database');
-
-let server = new ServerClass(4000);
-let routes = new RoutesClass(server.getServer());
-let db = new DataBase();
-
-routes.addAPIMethod('api/item/itemService', '/item');
-routes.startAPIRoutes();
-routes.startAPISearch();
+const server = new ServerClass(4000);
+const item = new ItemRoutes(server.getServer());
+const db = new DataBase();
 
 db.dbConnection();
