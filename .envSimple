@@ -1,0 +1,6 @@
+module.exports = {
+  authSecret: '',
+  keyAdmin: '',
+  admin_email: '',
+  admin_password: ''
+}

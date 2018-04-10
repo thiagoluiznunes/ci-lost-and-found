@@ -22,10 +22,12 @@
   },
   "homepage": "https://github.com/ThiagoLuizNunes/ci-lost-and-found#readme",
   "dependencies": {
+    "bcrypt": "2.0.0",
     "bluebird": "3.5.1",
     "body-parser": "1.17.2",
     "express": "4.15.3",
     "express-query-int": "1.0.1",
+    "jsonwebtoken": "8.2.1",
     "mongoose": "4.11.5",
     "node-restful": "0.2.6"
   },
