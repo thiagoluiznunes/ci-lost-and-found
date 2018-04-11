@@ -6,7 +6,7 @@ class User extends mongoose.Schema {
   constructor() {
     super({
       name: { type: String, required: [true, 'Informe o nome.'] },
-      username: { type: String, required: [true, 'Informe o login.'] },
+      email: { type: String, required: [true, 'Informe o email.'] },
       password: { type: String, required: [true, 'Informe a senha.'] },
       contact: { type: String, required: [true, 'Informe seu contato.'] } });
   }
