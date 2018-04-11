@@ -6,5 +6,7 @@ module.exports = {
       "singleline": true,
       "object-curly-newline": "off",
       "prefer-destructuring": "off",
+      "consistent-return": "off",
+      "no-shadow": "off",
     }
 };

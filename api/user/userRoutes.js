@@ -9,7 +9,7 @@ class UserRoutes {
     this.initRoutes = (server) => {
       server.use('/', router);
 
-      // router.post('/login', service.login);
+      router.post('/login', service.login);
       router.post('/signup', service.signup);
     };
   }
