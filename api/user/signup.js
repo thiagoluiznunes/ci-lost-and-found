@@ -2,8 +2,11 @@ import bcrypt from 'bcrypt';
 import User from './user';
 
 class SignUp {
-  constructor(emailRegex, passwordRegex) {
+  constructor() {
     this.signup = (req, res) => {
+      const emailRegex = /\S+@\S+\.\S+/;
+      const passwordRegex = /.{6,12}/;
+
       const name = req.body.name || '';
       const email = req.body.email || '';
       const password = req.body.password || '';

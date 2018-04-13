@@ -3,10 +3,7 @@ import Login from './login';
 
 class UserService {
   constructor() {
-    const emailRegex = /\S+@\S+\.\S+/;
-    const passwordRegex = /.{6,12}/;
-
-    const userSignUp = new SignUp(emailRegex, passwordRegex);
+    const userSignUp = new SignUp();
     const userLogin = new Login();
 
     this.signup = userSignUp.signup;
