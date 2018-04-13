@@ -6,7 +6,6 @@ class SignUp {
     this.signup = (req, res) => {
       const name = req.body.name || '';
       const email = req.body.email || '';
-      const contact = req.body.contact || '';
       const password = req.body.password || '';
       const confirmPassword = req.body.confirm_password || '';
 
@@ -28,7 +27,7 @@ class SignUp {
         if (err) return res.status(400).send({ message: 'Erro de busca!' });
         else if (user) return res.status(400).send({ errors: 'Usuário já cadastrado!' });
 
-        const newUser = new User({ name, email, password: passwordHash, contact });
+        const newUser = new User({ name, email, password: passwordHash });
         newUser.save((err) => {
           if (err) {
             return res.status(400).send({ message: err });
