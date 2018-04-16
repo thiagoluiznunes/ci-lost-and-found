@@ -7,7 +7,7 @@ class ItemRoutes {
     const router = new express.Router();
 
     this.initRoutes = (server) => {
-      server.use('/api', router);
+      server.use('/oapi', router);
       service.register(router, '/item');
       router.get('/search-name/:name', query.searchByName);
     };
