@@ -7,7 +7,7 @@ class UserRoutes {
     const service = new UserService();
 
     this.initRoutes = (server) => {
-      server.use('/', router);
+      server.use('/oapi', router);
 
       router.post('/login', service.login);
       router.post('/signup', service.signup);
