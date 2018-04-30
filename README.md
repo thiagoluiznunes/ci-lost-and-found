@@ -1,5 +1,9 @@
 # ci-lost-and-found
 
+[![Build Status](https://travis-ci.org/ThiagoLuizNunes/ci-lost-and-found.svg?branch=master)](https://travis-ci.org/ThiagoLuizNunes/ci-lost-and-found)
+[![Maintainability](https://api.codeclimate.com/v1/badges/fa2b7ec79cd70ed54605/maintainability)](https://codeclimate.com/github/ThiagoLuizNunes/ci-lost-and-found/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/fa2b7ec79cd70ed54605/test_coverage)](https://codeclimate.com/github/ThiagoLuizNunes/ci-lost-and-found/test_coverage)
+
 Toolkit: Node.js | Express | MongoDB | Mongoose | JWT | Bcript | Eslint | Babel
 
 ### Requirements ###
