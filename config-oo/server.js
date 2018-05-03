@@ -13,7 +13,7 @@ class ServerClass {
     server.use(allowCors);
     server.use(queryParser());
 
-    server.listen(process.env.PORT || port, () => console.log('Listening'));
+    server.listen(process.env.PORT || port, () => console.log('Listening on: ', port));
 
     this.getPort = () => port;
     this.getServer = () => server;
