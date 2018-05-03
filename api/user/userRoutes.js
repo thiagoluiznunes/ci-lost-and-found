@@ -11,6 +11,7 @@ class UserRoutes {
 
       router.post('/login', service.login);
       router.post('/signup', service.signup);
+      router.post('/validateToken', service.validateToken);
     };
   }
 }
