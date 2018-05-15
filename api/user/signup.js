@@ -29,7 +29,7 @@ class SignUp {
 
       User.findOne({ email }, (err, user) => {
         if (err) return sendErrorsFromDB(res, err);
-        else if (user) return res.status(400).send({ errors: ['Usuário já cadastrado!'] });
+        else if (user) return res.status(400).send({ errors: ['Email já cadastrado!'] });
 
         const newUser = new User({ name, email, password: passwordHash });
         newUser.save((err) => {
