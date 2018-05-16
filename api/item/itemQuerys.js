@@ -1,13 +1,16 @@
-const Item = require('./item');
+import Item from './item';
 
-const searchByName = (req, res) => {
-  const urlParameter = req.params.name;
-  // Find the objet by name
-  Item.find({ 'name': urlParameter }, (err, item) => {
-    if (err) res.json(err);
-    else res.json(item);
-  });
-};
+class ItemQuerys {
+  constructor() {
+    this.getAll = (req, res) => {
+      Item.find({}, (err, items) => {
+        if (err) {
+          return { erros: ['Falha ao recuperar dados de postagens.'] };
+        }
+        return res.json(items);
+      });
+    };
+  }
+}
 
-export default { searchByName };
-
+export default ItemQuerys;

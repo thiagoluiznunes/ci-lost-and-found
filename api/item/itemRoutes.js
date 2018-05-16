@@ -1,15 +1,20 @@
 import express from 'express';
 import service from './itemService';
-import query from './itemQuerys';
+import ItemQuerys from './itemQuerys';
 
 class ItemRoutes {
   constructor() {
-    const router = new express.Router();
+    const closedApi = new express.Router();
+    const openApi = new express.Router();
+    const querys = new ItemQuerys();
 
-    this.initRoutes = (server) => {
-      server.use('/oapi', router);
-      service.register(router, '/item');
-      router.get('/search-name/:name', query.searchByName);
+    this.initRoutes = (server, protect) => {
+      server.use('/oapi', openApi);// Crrate name to Open API
+      openApi.get('/item', querys.getAll);
+
+      server.use('/api', closedApi);// Create name to closed API
+      closedApi.use(protect); // Add middleware
+      service.register(closedApi, '/item'); // Register CRUD in API
     };
   }
 }
