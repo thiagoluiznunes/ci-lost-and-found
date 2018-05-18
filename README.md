@@ -8,7 +8,11 @@
 Toolkit: Node.js | Express | MongoDB | Mongoose | JWT | Bcript | Eslint | Babel
 
 ### Requirements ###
+Install the requirements below:
+* **[Node.js 6.9.5](http://nodejs.org/en/)** :white_check_mark:
+* **[Mongoose 4.11.5](http://mongoosejs.com/)** :white_check_mark:
 
+### Stack ###
 * **[Node.js 6.9.5](http://nodejs.org/en/)** :white_check_mark:
 * **[Express](http://nodejs.org/en/)** :white_check_mark:
 * **[MongoDB](https://www.mongodb.com/)** :white_check_mark:
@@ -29,8 +33,12 @@ Toolkit: Node.js | Express | MongoDB | Mongoose | JWT | Bcript | Eslint | Babel
   user@user:~/path_to_cloned_folder/ci-lost-and-found$ npm install
   ```
   - **Manually install the dependencies that may have not been installed by the above command.** :white_check_mark:
+3. Start MongoDB:
+  ```
+  use@user:~/mongod
+  ```
 3. Start application:
-```
+  ```
   use@user:~/path_to_cloned_folder/ci-lost-and-found$ npm run dev || npm run babel
   ```
   ```
