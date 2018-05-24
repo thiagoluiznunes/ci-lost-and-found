@@ -10,7 +10,7 @@ Toolkit: Node.js | Express | MongoDB | Mongoose | JWT | Bcript | Eslint | Babel
 ### Requirements ###
 Install the requirements below:
 * **[Node.js 6.9.5](http://nodejs.org/en/)** :white_check_mark:
-* **[Mongoose 4.11.5](http://mongoosejs.com/)** :white_check_mark:
+* **[MongoDB 3.4.6](https://www.mongodb.com/)** :white_check_mark:
 
 ### Stack ###
 * **[Node.js 6.9.5](http://nodejs.org/en/)** :white_check_mark:
