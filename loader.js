@@ -1,8 +1,8 @@
-import ServerClass from './config-oo/server';
+import ServerClass from './config/server';
 import ItemRoutes from './api/item/itemRoutes';
 import UserRoutes from './api/user/userRoutes';
-import DataBase from './config-oo/database';
-import Authorization from './config-oo/auth';
+import DataBase from './config/database';
+import Authorization from './config/auth';
 
 const server = new ServerClass(4000);
 const item = new ItemRoutes();
