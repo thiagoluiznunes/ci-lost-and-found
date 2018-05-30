@@ -11,7 +11,7 @@ class ItemRoutes {
       server.use('/oapi', openApi); // Crrate name to Open API
       openApi.get('/item', querys.getAll);
 
-      server.use('/api', closedApi);  // Create name to closed API
+      server.use('/api', closedApi); // Create name to closed API
       closedApi.use(protect); // Add middleware
       service.register(closedApi, '/item'); // Register CRUD in API
     };

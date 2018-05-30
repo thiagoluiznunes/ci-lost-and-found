@@ -4,7 +4,7 @@ import validate from './token';
 
 class UserService {
   constructor() {
-    this.signup = signup; 
+    this.signup = signup;
     this.login = login;
     this.validateToken = validate;
   }
