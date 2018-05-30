@@ -1,16 +1,12 @@
-import SignUp from './signup';
-import Login from './login';
-import Token from './token';
+import signup from './signup';
+import login from './login';
+import validate from './token';
 
 class UserService {
   constructor() {
-    const userSignUp = new SignUp();
-    const userLogin = new Login();
-    const token = new Token();
-
-    this.signup = userSignUp.signup;
-    this.login = userLogin.login;
-    this.validateToken = token.validate;
+    this.signup = signup; 
+    this.login = login;
+    this.validateToken = validate;
   }
 }
 
