@@ -1,15 +1,9 @@
-import _ from 'lodash';
 import bcrypt from 'bcrypt';
+import errors from './errors';
 import User from './user';
 
 const emailRegex = /\S+@\S+\.\S+/;
 const passwordRegex = /.{6,12}/;
-
-const sendErrorsFromDB = (res, dbErrors) => {
-  const errors = [];
-  _.forIn(dbErrors.errors, error => errors.push(error.message));
-  return res.status(400).json({ errors });
-};
 
 const signup = (req, res) => {
   const name = req.body.name || '';
@@ -26,12 +20,12 @@ const signup = (req, res) => {
   if (!bcrypt.compareSync(confirmPassword, passwordHash)) return res.status(400).send({ errors: ['Senhas não conferem!'] });
 
   User.findOne({ email }, (err, user) => {
-    if (err) return sendErrorsFromDB(res, err);
+    if (err) return errors.sendErrorsFromDB(res, err);
     else if (user) return res.status(400).send({ errors: ['Email já cadastrado!'] });
 
     const newUser = new User({ name, email, password: passwordHash });
     newUser.save((err) => {
-      if (err) return sendErrorsFromDB(res, err);
+      if (err) return errors.sendErrorsFromDB(res, err);
       return res.status(200).send({ data: true, errors: ['Registro realizado com sucesso!'] });
     });
   });

@@ -8,5 +8,6 @@ module.exports = {
       "prefer-destructuring": "off",
       "consistent-return": "off",
       "no-shadow": "off",
+      "no-param-reassign": [2, { "props": false }],
     }
 };
