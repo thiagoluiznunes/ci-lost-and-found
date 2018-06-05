@@ -3,24 +3,24 @@ import queryParser from 'express-query-int';
 import express from 'express';
 import allowCors from './cors';
 
-class ServerClass {
-  constructor(p) {
-    const port = p;
-    const server = express();
+// Singleton Pattern
+const server = express();
+let port = 4000;
 
-    server.use(bodyParser.urlencoded({ extended: true }));
-    server.use(bodyParser.json());
-    server.use(allowCors);
-    server.use(queryParser());
+const initServer = (p) => {
+  port = p;
+  server.use(bodyParser.urlencoded({ extended: true }));
+  server.use(bodyParser.json());
+  server.use(allowCors);
+  server.use(queryParser());
 
-    server.listen(process.env.PORT || port, () => console.log('Listening on: ', port));
+  server.listen(process.env.PORT || port, () => console.log('Listening on: ', port));
+};
 
-    this.getPort = () => port;
-    this.getServer = () => server;
-    this.setPort = (newport) => {
-      this.port = newport;
-    };
-  }
-}
+const getPort = () => port;
+const getServer = () => server;
+const setPort = (newport) => {
+  port = newport;
+};
 
-export default ServerClass;
+export default { initServer, getServer, getPort, setPort };

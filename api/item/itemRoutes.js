@@ -7,6 +7,7 @@ class ItemRoutes {
     const closedApi = new express.Router();
     const openApi = new express.Router();
 
+    // Facade Pattern
     this.initRoutes = (server, protect) => {
       server.use('/oapi', openApi); // Crrate name to Open API
       openApi.get('/item', querys.getAll);

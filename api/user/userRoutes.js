@@ -6,6 +6,7 @@ class UserRoutes {
     const router = new express.Router();
     const service = new UserService();
 
+    // Facade Pattern
     this.initRoutes = (server) => {
       server.use('/oapi', router);
 
