@@ -22,6 +22,7 @@ const initServer = (p) => {
   server.listen(process.env.PORT || port, () => console.log('Listening on: ', port));
 };
 
+// Facade Pattern
 const initRoutes = () => {
   item.initRoutes(server, auth.protect);
   user.initRoutes(server);
