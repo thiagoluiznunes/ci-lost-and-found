@@ -3,22 +3,22 @@ import ItemArticleRoutes from './itemArticle/itemRoutes';
 
 class ItemFactoryRoutes {
   constructor() {
-    const userRoutes = new ItemPostRoutes();
+    const itemRoutes = new ItemPostRoutes();
 
     this.createItemRoutes = (option) => {
       switch (option) {
         case 'post':
-          this.userRoutes = new ItemPostRoutes();
+          this.itemRoutes = new ItemPostRoutes();
           break;
 
         case 'article':
-          this.userRoutes = new ItemArticleRoutes();
+          this.itemRoutes = new ItemArticleRoutes();
           break;
         default:
           // statements_def
           break;
       }
-      return userRoutes;
+      return itemRoutes;
     };
   }
 }
