@@ -12,7 +12,7 @@ class ItemFactoryRoutes {
           this.userRoutesClass = new ItemPostRoutes();
           break;
 
-        case 'facebook':
+        case 'article':
           this.userRoutesClass = new ItemArticleRoutes();
           break;
         default:
