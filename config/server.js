@@ -4,8 +4,9 @@ import express from 'express';
 import allowCors from './cors';
 import auth from '../config/auth';
 
-import UserFactoryRoutes from '../api/user/userFactoryRoutes';
-import ItemFactoryRoutes from '../api/item/itemFactoryRoutes';
+// import UserFactoryRoutes from '../api/user/userFactoryRoutes';
+// import ItemFactoryRoutes from '../api/item/itemFactoryRoutes';
+import ApiFactoryRoutes from '../api/apiFactoryRoutes';
 
 // Singleton Pattern
 let port = 4000;
@@ -30,11 +31,9 @@ const initServer = (p) => {
  * in the Express server
  */
 const initRoutes = () => { // Facade Pattern
-  const userFactory = new UserFactoryRoutes(); // Factory Method Pattern
-  const userRegisterRoutes = userFactory.createRoutesClass('register');
-
-  const itemFactory = new ItemFactoryRoutes(); // Factory Method Pattern
-  const itemPostRoutes = itemFactory.createRoutesClass('post');
+  const apiFactory = new ApiFactoryRoutes(); // Factory Method Pattern
+  const userRegisterRoutes = apiFactory.createUserRoutes('register');
+  const itemPostRoutes = apiFactory.createItemRoutes('post');
 
   itemPostRoutes.initRoutes(server, auth.protect);
   userRegisterRoutes.initRoutes(server);

@@ -1,27 +1,26 @@
-import ItemPostRoutes from './itemPost/itemRoutes';
-import ItemArticleRoutes from './itemArticle/itemRoutes';
+// import ItemPostRoutes from './itemPost/itemRoutes';
+// import ItemArticleRoutes from './itemArticle/itemRoutes';
 
-class ItemFactoryRoutes {
-  constructor() {
-    // By default
-    const userRoutesClass = new ItemPostRoutes();
+// class ItemFactoryRoutes {
+//   constructor() {
+//     this.createRoutesClass = (option) => {
+//       const userRoutes = new ItemPostRoutes();
 
-    this.createRoutesClass = (option) => {
-      switch (option) {
-        case 'post':
-          this.userRoutesClass = new ItemPostRoutes();
-          break;
+//       switch (option) {
+//         case 'post':
+//           this.userRoutes = new ItemPostRoutes();
+//           break;
 
-        case 'article':
-          this.userRoutesClass = new ItemArticleRoutes();
-          break;
-        default:
-          // statements_def
-          break;
-      }
-      return userRoutesClass;
-    };
-  }
-}
+//         case 'article':
+//           this.userRoutes = new ItemArticleRoutes();
+//           break;
+//         default:
+//           // statements_def
+//           break;
+//       }
+//       return userRoutes;
+//     };
+//   }
+// }
 
-export default ItemFactoryRoutes;
+// export default ItemFactoryRoutes;
