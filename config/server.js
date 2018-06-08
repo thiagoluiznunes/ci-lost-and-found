@@ -11,6 +11,10 @@ import ItemFactoryRoutes from '../api/item/itemFactoryRoutes';
 let port = 4000;
 const server = express();
 
+/**
+ * Start Express server at the port choosed
+ * @param {number} port 8080
+ */
 const initServer = (p) => {
   port = p;
   server.use(bodyParser.urlencoded({ extended: true }));
@@ -21,20 +25,37 @@ const initServer = (p) => {
   server.listen(process.env.PORT || port, () => console.log('Listening on: ', port));
 };
 
-// Facade Pattern
-const initRoutes = () => {
-  const userFactory = new UserFactoryRoutes();
+/**
+ * Starts all the routes of each entity
+ * in the Express server
+ */
+const initRoutes = () => { // Facade Pattern
+  const userFactory = new UserFactoryRoutes(); // Factory Method Pattern
   const userRegisterRoutes = userFactory.createRoutesClass('register');
 
-  const itemFactory = new ItemFactoryRoutes();
+  const itemFactory = new ItemFactoryRoutes(); // Factory Method Pattern
   const itemPostRoutes = itemFactory.createRoutesClass('post');
 
   itemPostRoutes.initRoutes(server, auth.protect);
   userRegisterRoutes.initRoutes(server);
 };
 
+/**
+ * Get Express server port
+ * @return {number}
+ */
 const getPort = () => port;
+
+/**
+ * Get Express server instance
+ * @return {Express}
+ */
+
 const getServer = () => server;
+/**
+ * Set Express server port
+ * @param {number}
+ */
 const setPort = (newport) => {
   port = newport;
 };
