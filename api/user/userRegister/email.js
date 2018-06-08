@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import env from '../../dotenv';
+import env from '../../../dotenv';
 
 const sendEmail = (req, email, token) => {
   const transport = nodemailer.createTransport({

@@ -3,14 +3,13 @@ import queryParser from 'express-query-int';
 import express from 'express';
 import allowCors from './cors';
 import auth from '../config/auth';
-import ItemRoutes from '../api/item/itemRoutes';
-import UserRoutes from '../api/user/userRoutes';
+
+import UserFactoryRoutes from '../api/user/userFactoryRoutes';
+import ItemFactoryRoutes from '../api/item/itemFactoryRoutes';
 
 // Singleton Pattern
 let port = 4000;
 const server = express();
-const item = new ItemRoutes();
-const user = new UserRoutes();
 
 const initServer = (p) => {
   port = p;
@@ -24,8 +23,14 @@ const initServer = (p) => {
 
 // Facade Pattern
 const initRoutes = () => {
-  item.initRoutes(server, auth.protect);
-  user.initRoutes(server);
+  const userFactory = new UserFactoryRoutes();
+  const userRegisterRoutes = userFactory.createRoutesClass('register');
+
+  const itemFactory = new ItemFactoryRoutes();
+  const itemPostRoutes = itemFactory.createRoutesClass('post');
+
+  itemPostRoutes.initRoutes(server, auth.protect);
+  userRegisterRoutes.initRoutes(server);
 };
 
 const getPort = () => port;

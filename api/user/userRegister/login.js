@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import User from './user';
-import env from '../../dotenv';
+import env from '../../../dotenv';
 
 const login = (req, res) => {
   const email = req.body.email || '';

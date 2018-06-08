@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import env from '../../dotenv';
+import env from '../../../dotenv';
 import errors from './errors';
 import sendEmail from './email';
 import User from './user';
