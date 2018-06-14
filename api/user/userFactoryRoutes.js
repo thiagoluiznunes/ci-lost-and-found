@@ -3,22 +3,23 @@ import UserFacebookRoutes from './userFacebook/userRoutes';
 
 class UserFactoryRoutes {
   constructor() {
-    const userRoutes = new UserRegisterRoutes();
+    this.createRoutesClass = (option) => {
+      // By default
+      const userRoutesClass = new UserRegisterRoutes();
 
-    this.createUserRoutes = (option) => {
       switch (option) {
         case 'register':
-          this.userRoutes = new UserRegisterRoutes();
+          this.userRoutesClass = new UserRegisterRoutes();
           break;
 
         case 'facebook':
-          this.userRoutes = new UserFacebookRoutes();
+          this.userRoutesClass = new UserFacebookRoutes();
           break;
         default:
           // statements_def
           break;
       }
-      return userRoutes;
+      return userRoutesClass;
     };
   }
 }
