@@ -31,10 +31,10 @@ const initServer = (p) => {
  */
 const initRoutes = () => { // Facade Pattern
   const userFactory = new UserFactoryRoutes(); // Factory Method Pattern
-  const userRegisterRoutes = userFactory.createUserRoutes('register');
+  const userRegisterRoutes = userFactory.createRoutesClass('register');
 
   const itemFactory = new ItemFactoryRoutes(); // Factory Method Pattern
-  const itemPostRoutes = itemFactory.createItemRoutes('post');
+  const itemPostRoutes = itemFactory.createRoutesClass('post');
 
   itemPostRoutes.initRoutes(server, auth.protect);
   userRegisterRoutes.initRoutes(server);
