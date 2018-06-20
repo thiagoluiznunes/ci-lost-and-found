@@ -4,6 +4,6 @@ class PostegresAdapter {
       console.log('MySQL connected!');
     };
   }
-}   
+}
 
 export default PostegresAdapter;

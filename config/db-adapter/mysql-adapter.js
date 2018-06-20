@@ -4,6 +4,6 @@ class MySqlAdapter {
       console.log('MySQL connected!');
     };
   }
-}   
+}
 
 export default MySqlAdapter;
