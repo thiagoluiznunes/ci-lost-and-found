@@ -1,6 +1,3 @@
-import mongoose from 'mongoose';
-import bluebird from 'bluebird';
-
 /**
  * Adapter Design Patterns
  */
