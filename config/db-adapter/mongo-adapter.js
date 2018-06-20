@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import bluebird from 'bluebird';
 
-class MongoClass {
+class MongoAdapter {
   constructor() {
     this.dbConnection = () => {
       mongoose.Promise = bluebird;
@@ -11,4 +11,4 @@ class MongoClass {
   }
 }
 
-export default MongoClass;
+export default MongoAdapter;

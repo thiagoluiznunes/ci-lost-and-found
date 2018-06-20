@@ -1,20 +1,23 @@
-import MongoClass from './mongo-class';
-import MySqlClass from './mysql-class';
-import PostgresClass from './postgres-class';
+import MongoAdapter from './mongo-adapter';
+import MySqlAdapter from './mysql-adapter';
+import PostgresAdapter from './postgres-adapter';
 
+/**
+ * Adapter Design Patterns
+ */
 class TargetDataBase {
   constructor(type) {
     let result;
 
     switch (type) {
       case 'mongodb':
-        result = new MongoClass();
+        result = new MongoAdapter();
         break;
       case 'mysql':
-        result = new MySqlClass();
+        result = new MySqlAdapter();
         break;
       case 'postgres':
-        result = new PostgresClass();
+        result = new PostgresAdapter();
         break;
       default:
         result = null;

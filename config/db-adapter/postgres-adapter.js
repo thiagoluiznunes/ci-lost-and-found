@@ -1,4 +1,4 @@
-class MySqlClass {
+class PostegresAdapter {
   constructor() {
     this.dbConnection = () => {
       console.log('MySQL connected!');
@@ -6,4 +6,4 @@ class MySqlClass {
   }
 }   
 
-export default MySqlClass;
+export default PostegresAdapter;
