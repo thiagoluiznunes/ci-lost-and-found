@@ -10,7 +10,7 @@ class ItemRoutes {
     // Facade Pattern
     this.initRoutes = (server, protect) => {
       server.use('/oapi', openApi); // Crrate name to Open API
-      openApi.get('/item', querys.getAll);
+      openApi.get('/item/:skip/:limit', querys.getAll);
       openApi.get('/count', querys.count);
 
       server.use('/api', closedApi); // Create name to closed API
